@@ -1,5 +1,9 @@
 var page   = require('webpage').create(),
-    system = require('system');
+    system = require('system'),
+    fs = require('fs');
+
+var args = system.args;
+var captureDir = (args.length > 1)? args[1] : ".";
 
 page.paperSize = {
   format: "A4",
@@ -26,8 +30,8 @@ function capture() {
     phantom.exit(1);
   page.open(url, function(status) {
     var captureName ='ss_' + randomString(8, 'abcdefghijklmnopqrstuvwxyz0123456789') + '.pdf';
-    page.render(captureName);
-    system.stdout.writeLine(captureName);
+    page.render(captureDir + "/" + captureName);
+    system.stdout.writeLine(captureDir + "/" + captureName);
     system.stdout.flush();
     captured = true;
   });
