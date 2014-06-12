@@ -3,6 +3,8 @@ webcapture-java
 
 A bridge to PhantomJS for capturing web pages. 
 
+![architecture](https://farm6.staticflickr.com/5581/14215424188_057d66dcc8_z.jpg)
+
 ## Prerequisite
 
 You need to install PhantomJS 1.9 or higher.
